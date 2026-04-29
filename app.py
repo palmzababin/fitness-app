@@ -928,7 +928,12 @@ def tab_nutrition(p: dict, calories: int, protein: int, carbs: int, fat: int, lo
         fig2 = calories_chart(log_df, calories)
         if fig2:
             st.markdown('<div class="section-title">Calorie trend</div>', unsafe_allow_html=True)
-            st.plotly_chart(fig2, use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(
+                fig2,
+    use_container_width=True,
+    config={"displayModeBar": False},
+    key="nutrition_chart"
+)
 
 
 def tab_log(calories: int, protein: int, log_df: pd.DataFrame):
